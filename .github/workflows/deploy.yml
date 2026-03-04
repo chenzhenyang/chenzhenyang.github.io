@@ -1,0 +1,38 @@
+name: Deploy Hexo to GitHub Pages
+
+on:
+  push:
+    branches: [ master ]  # 或 main，根据你的默认分支
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install Dependencies
+        run: |
+          npm install
+          npm install -g hexo-cli
+      
+      - name: Generate Static Files
+        run: hexo generate
+        env:
+          NODE_ENV: production
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: master
+          external_repository: chenzhenyang/chenzhenyang.github.io
+          force_orphan: true
+          full_commit_message: ${{ github.event.head_commit.message }}
