@@ -1,7 +1,7 @@
 ---
 title: "Agent Client Protocol 概述"
-date: 2026-03-05 23:10:26
-updated: 2026-03-05 23:10:26
+date: 2026-03-05 23:40:00
+updated: 2026-03-05 23:40:00
 tags:
   - AI
   - Agent
@@ -16,13 +16,13 @@ categories:
 **原文**: https://www.philschmid.de/acp-overview  
 **翻译**: LiterCrawler Skill
 
-![ACP 概述](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/8defa51e/acp.png)
+![ACP 概述](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/824ecf54/acp.png)
 
 ## 介绍
 
 Agent Client Protocol (ACP) 为 AI agent 与外部工具和服务的通信和交互提供了标准化方式。
 
-![工具集成](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/8defa51e/tool.png)
+![工具集成](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/824ecf54/tool.png)
 
 ## 主要特性
 
@@ -30,19 +30,19 @@ Agent Client Protocol (ACP) 为 AI agent 与外部工具和服务的通信和交
 - **灵活集成**: 支持各种工具和服务
 - **安全优先**: 内置权限和访问控制
 
-![完整工作流](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/8defa51e/full.png)
+![完整工作流](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/824ecf54/full.png)
 
 ## 终端集成
 
 ACP 为 AI agent 提供无缝的终端集成。
 
-![终端](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/8defa51e/terminal.png)
+![终端](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/824ecf54/terminal.png)
 
 ## 权限系统
 
 内置权限系统确保安全和受控的访问。
 
-![权限](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/8defa51e/permission.png)
+![权限](https://raw.githubusercontent.com/chenzhenyang/images/master/litercrawler-test/824ecf54/permission.png)
 
 ## 结论
 
