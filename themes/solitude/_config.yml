@@ -1,0 +1,57 @@
+# Solitude Theme Configuration
+
+# 网站信息
+site:
+  title: 架构新势力
+  subtitle: 技术分享与交流
+  description: 专注于技术分享、架构设计、开发经验
+  author: chenzhenyang
+  avatar: /img/avatar.jpg
+  favicon: /img/favicon.ico
+
+# 菜单配置
+menu:
+  Home: /
+  Archives: /archives
+  Tags: /tags
+  Categories: /categories
+  About: /about
+
+# 社交链接
+social:
+  GitHub: https://github.com/chenzhenyang
+  Email: mailto:czy_1@qq.com
+
+# 评论系统 - Giscus
+comments:
+  enable: true
+  type: giscus
+  giscus:
+    repo: chenzhenyang/chenzhenyang.github.io
+    repoId: 待填写
+    category: Announcements
+    categoryId: 待填写
+    mapping: pathname
+    strict: 0
+    reactionsEnabled: 1
+    emitMetadata: 0
+    inputPosition: bottom
+    theme: light
+    lang: zh-CN
+    loading: lazy
+
+# 代码高亮
+highlight:
+  enable: true
+  theme: atom-one-dark
+
+# 文章设置
+post:
+  excerpt_length: 200
+  copyright:
+    enable: true
+    author: chenzhenyang
+
+# 页面设置
+page:
+  per_page: 10

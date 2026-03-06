@@ -20,11 +20,13 @@
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-ejs": "^0.3.1",
     "hexo-renderer-marked": "^0.3.2",
+    "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-renderer-swig": "^2.0.0",
     "hexo-server": "^0.3.3",
     "hexo-symbols-count-time": "^0.4.4",
     "hexo-theme-next": "^8.27.0",
+    "hexo-theme-solitude": "^3.0.21",
     "hexo-toc": "^1.1.0"
   }
 }
