@@ -1,7 +1,5 @@
 ---
-title: "Agent Client Protocol 概述"
-date: 2026-03-05 23:40:00
-updated: 2026-03-05 23:40:00
+title: Agent Client Protocol 概述
 tags:
   - AI
   - Agent
@@ -9,6 +7,9 @@ tags:
   - ACP
 categories:
   - Technology
+abbrlink: 861056531
+date: 2026-03-05 23:40:00
+updated: 2026-03-05 23:40:00
 ---
 
 # Agent Client Protocol 概述
