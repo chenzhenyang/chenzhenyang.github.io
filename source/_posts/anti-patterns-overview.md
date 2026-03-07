@@ -1,7 +1,7 @@
 ---
 title: "反模式：需要避免的事情 - Agentic Engineering Patterns"
-date: 2026-03-08 00:05:00
-updated: 2026-03-08 00:05:00
+date: 2026-03-08 00:45:00
+updated: 2026-03-08 00:45:00
 tags:
   - AI
   - Agentic Engineering
