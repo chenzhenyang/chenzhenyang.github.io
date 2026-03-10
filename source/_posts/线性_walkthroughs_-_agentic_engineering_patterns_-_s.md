@@ -1,7 +1,7 @@
 ---
 title: "线性 walkthroughs - Agentic Engineering Patterns - Simon Willison 的 Weblog"
-date: 2026-03-10 21:36:45
-updated: 2026-03-10 21:36:45
+date: 2026-03-10 21:42:31
+updated: 2026-03-10 21:42:31
 tags:
   - AI
   - Technology
