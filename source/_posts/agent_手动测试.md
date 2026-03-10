@@ -1,17 +1,12 @@
 ---
 title: "Agent 手动测试"
-date: 2026-03-10 09:00:41
-updated: 2026-03-10 09:00:41
+date: 2026-03-10 09:00:45
+updated: 2026-03-10 09:00:45
 tags:
-  - AI
+- AI
   - Technology
 categories:
-  - Technology
----
-
----
-title: Agent 手动测试 - Agentic Engineering Patterns
-tags: [AI, Agent, 测试，手动测试，Playwright]
+- Technology
 ---
 
 # Agent 手动测试

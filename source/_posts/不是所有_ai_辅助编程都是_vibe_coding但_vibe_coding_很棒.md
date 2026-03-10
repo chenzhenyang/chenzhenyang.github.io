@@ -1,17 +1,12 @@
 ---
 title: "不是所有 AI 辅助编程都是 Vibe Coding（但 Vibe Coding 很棒）"
-date: 2026-03-10 11:28:43
-updated: 2026-03-10 11:28:43
+date: 2026-03-10 11:28:48
+updated: 2026-03-10 11:28:48
 tags:
-  - AI
+- AI
   - Technology
 categories:
-  - Technology
----
-
----
-title: 不是所有 AI 辅助编程都是 Vibe Coding（但 Vibe Coding 很棒）
-tags: [AI, Vibe Coding, 编程，AI 辅助编程]
+- Technology
 ---
 
 # 不是所有 AI 辅助编程都是 Vibe Coding（但 Vibe Coding 很棒）

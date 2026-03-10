@@ -1,17 +1,12 @@
 ---
 title: "我如何使用 LLM 帮助我编写代码"
-date: 2026-03-10 11:20:16
-updated: 2026-03-10 11:20:16
+date: 2026-03-10 11:20:19
+updated: 2026-03-10 11:20:19
 tags:
-  - AI
+- AI
   - Technology
 categories:
-  - Technology
----
-
----
-title: 我如何使用 LLM 帮助我编写代码
-tags: [AI, LLM, 编程，代码生成]
+- Technology
 ---
 
 # 我如何使用 LLM 帮助我编写代码
