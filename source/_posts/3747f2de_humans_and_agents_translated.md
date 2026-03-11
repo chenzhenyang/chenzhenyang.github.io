@@ -1,8 +1,8 @@
 ---
-title: "Humans and Agents in Software Engineering Loops
+title: "Humans and Agents in Software Engineering Loops"
 skill_id: 3747f2de
 generated: 2026-03-11T14:03:42.791207
-original_url: https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html"
+original_url: https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html
 date: 2026-03-11 14:06:43
 updated: 2026-03-11 14:06:43
 tags:
