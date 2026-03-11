@@ -9,7 +9,9 @@ categories:
   - Technology
 origin_title: "Assessing internal quality while coding with an agent"
 author: "Martin Fowler"
----
+
+skill_id: "d2217bb6c191"
+original_url: "https://martinfowler.com/articles/exploring-gen-ai/ccmenu-quality.html"---
 
 
 _原文来源：Martin Fowler_

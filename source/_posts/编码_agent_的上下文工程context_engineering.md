@@ -9,7 +9,9 @@ categories:
   - Technology
 origin_title: "Context Engineering for Coding Agents"
 author: "Martin Fowler"
----
+
+skill_id: "db035caa4eda"
+original_url: "https://martinfowler.com/articles/exploring-gen-ai/context-engineering-coding-agents.html"---
 
 
 _原文来源：Martin Fowler_

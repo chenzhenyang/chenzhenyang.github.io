@@ -9,7 +9,9 @@ categories:
   - Technology
 origin_title: "Understanding Spec-Driven-Development: Kiro, spec-kit, and Tessl"
 author: "Martin Fowler"
----
+
+skill_id: "dc47d6bf31ab"
+original_url: "https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html"---
 
 
 _原文来源：Martin Fowler_

@@ -9,6 +9,8 @@ categories:
   - Technology
 origin_title: "Autonomous coding agents: A Codex example"
 author: "Martin Fowler"
+skill_id: "f822e3ac265d"
+original_url: "https://martinfowler.com/articles/exploring-gen-ai/autonomous-agents-codex-example.html"
 ---
 
 

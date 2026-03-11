@@ -9,7 +9,9 @@ categories:
   - Technology
 origin_title: "Partner with the AI, throw away the code"
 author: "Martin Fowler"
----
+
+skill_id: "dd6397ad02f3"
+original_url: "https://martinfowler.com/articles/exploring-gen-ai/partner-with-ai-and-throw-away-the-code.html"---
 
 
 _原文来源：Martin Fowler_

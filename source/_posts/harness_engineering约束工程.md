@@ -9,6 +9,8 @@ categories:
   - Technology
 origin_title: "Harness Engineering"
 author: "Martin Fowler"
+skill_id: "7a5a2cf5ea81"
+original_url: "https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html"
 ---
 
 

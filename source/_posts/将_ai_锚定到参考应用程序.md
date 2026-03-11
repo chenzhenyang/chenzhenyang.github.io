@@ -9,7 +9,9 @@ categories:
   - Technology
 origin_title: "Anchoring AI to a reference application"
 author: "Martin Fowler"
----
+
+skill_id: "c07064ec8603"
+original_url: "https://martinfowler.com/articles/exploring-gen-ai/anchoring-to-reference.html"---
 
 
 _原文来源：Martin Fowler_
