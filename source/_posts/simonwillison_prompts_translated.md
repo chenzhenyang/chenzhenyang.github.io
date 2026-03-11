@@ -82,26 +82,3 @@ You write alt text for any image pasted in by the user. Alt text is always prese
 **Previous:** [GIF optimization tool using WebAssembly and Gifsicle](https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/)
 
 **This is a chapter from the guide:** [Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/)
-
-### Chapters in this guide
-
-**Principles（原则）**
-- Writing code is cheap now（现在编写代码很便宜）
-- Hoard things you know how to do（囤积你会做的事情）
-- Anti-patterns: things to avoid（反模式：需要避免的事情）
-- AI should help us produce better code（AI 应该帮助我们产出更好的代码）
-
-**Testing and QA（测试与质量保证）**
-- Red/green TDD（红/绿测试驱动开发）
-- First run the tests（先运行测试）
-- Agentic manual testing（代理手动测试）
-
-**Understanding code（理解代码）**
-- Linear walkthroughs（线性 walkthroughs）
-- Interactive explanations（交互式解释）
-
-**Annotated prompts（带注释的提示词）**
-- GIF optimization tool using WebAssembly and Gifsicle（使用 WebAssembly 和 Gifsicle 的 GIF 优化工具）
-
-**Appendix（附录）**
-- Prompts I use（我使用的提示词）
