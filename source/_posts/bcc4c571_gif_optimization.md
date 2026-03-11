@@ -1,5 +1,10 @@
 ---
-title: "使用 WebAssembly 和 Gifsicle 的 GIF 优化工具 - Agentic Engineering Patterns - Simon Willison's Weblog"
+title: "GIF 优化工具"
+origin_title: "GIF optimization - Agentic Engineering Patterns - Simon Willison's Weblog"
+author: "Simon Willison"
+skill_id: bcc4c571
+generated: 2026-03-11T12:07:54.105318
+original_url: https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/
 date: 2026-03-11 12:12:04
 updated: 2026-03-11 12:12:04
 tags:
@@ -9,14 +14,6 @@ tags:
   - Agentic Engineering
 categories:
   - Technology
-origin_title: "GIF optimization - Agentic Engineering Patterns - Simon Willison's Weblog"
-author: "Simon Willison"
----
-
-title: "使用 WebAssembly 和 Gifsicle 的 GIF 优化工具 - Agentic Engineering Patterns - Simon Willison's Weblog"
-skill_id: bcc4c571
-generated: 2026-03-11T12:07:54.105318
-original_url: https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/
 ---
 
 我喜欢在我的在线写作中包含动画 GIF 演示，通常使用 [LICEcap](https://www.cockos.com/licecap/) 录制。在 [交互式解释](https://simonwillison.net/guides/agentic-engineering-patterns/interactive-explanations/) 章节中就有一个例子。
