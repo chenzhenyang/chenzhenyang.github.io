@@ -74,11 +74,3 @@ You write alt text for any image pasted in by the user. Alt text is always prese
 这些决策未必总是正确的。Alt text 应该传达图片所承载的核心含义。我经常亲自编辑这个提示词生成的文本，或者提供进一步的提示词，让它扩展某些描述或删减多余信息。
 
 有时我会将多张图片传递给同一个使用此提示词的对话，因为这样模型可以通过参考第一张图片传达的信息来描述后续的图片。
-
----
-
-**Tags:** prompt-engineering (182)
-
-**Previous:** [GIF optimization tool using WebAssembly and Gifsicle](https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/)
-
-**This is a chapter from the guide:** [Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/)
