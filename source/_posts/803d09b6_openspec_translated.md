@@ -6,7 +6,12 @@ generated: 2026-03-12T22:28:55.353095
 original_url: https://raw.githubusercontent.com/Fission-AI/OpenSpec/refs/heads/main/README.md
 origin_title: "OpenSpec README"
 author: "Fission-AI"
-tags: ["OpenSpec", "规范框架", "AI 编程", "工作流"]---
+tags:
+  - OpenSpec
+  - 规范框架
+  - AI 编程
+  - 工作流
+---
 
 <p align="center">
   <a href="https://github.com/Fission-AI/OpenSpec">
