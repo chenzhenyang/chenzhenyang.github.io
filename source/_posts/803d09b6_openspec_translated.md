@@ -13,15 +13,12 @@ tags:
   - 工作流
 ---
 
-<details>
 <summary><strong>最受喜爱的规范 (spec) 框架。</strong></summary>
 
 [![https://img.shields.io/github/stars/Fission-AI/OpenSpec?style=flat-square&label=Stars](/images/Stars)](https://github.com/Fission-AI/OpenSpec/stargazers)
 [![https://img.shields.io/npm/dm/@fission-ai/openspec?style=flat-square&label=Downloads/mo](/images/Downloads)](https://www.npmjs.com/package/@fission-ai/openspec)
 [![https://img.shields.io/github/contributors/Fission-AI/OpenSpec?style=flat-square&label=Contributors](/images/Contributors)](https://github.com/Fission-AI/OpenSpec/graphs/contributors)
 
-</details>
-<p></p>
 我们的理念：
 
 ```text
@@ -36,10 +33,6 @@ tags:
 > **全新工作流 (workflow) 现已可用！**我们已用全新的 artifact 引导工作流重构了 OpenSpec。
 >
 > 运行 `/opsx:propose "你的想法"` 开始使用。→ [了解更多](docs/opsx.md)
-
-<p align="center">
-  关注 <a href="https://x.com/0xTab">@0xTab on X</a> 获取更新 · 加入 <a href="https://discord.gg/YctCnvvshC">OpenSpec Discord</a> 获取帮助和提问。
-</p>
 
 ### 团队
 
@@ -70,15 +63,7 @@ AI:  正在实现任务...
 AI:  已归档至 openspec/changes/archive/2025-01-23-add-dark-mode/
      规范已更新。准备好下一个功能。
 ```
-
-<details>
 <summary><strong>OpenSpec Dashboard</strong></summary>
-
-<p align="center">
-  <img src="assets/openspec_dashboard.png" alt="OpenSpec dashboard preview" width="90%">
-</p>
-
-</details>
 
 ## 快速开始
 
@@ -177,7 +162,6 @@ openspec update
 
 ## 其他
 
-<details>
 <summary><strong>遥测</strong></summary>
 
 OpenSpec 收集匿名使用统计。
@@ -186,29 +170,18 @@ OpenSpec 收集匿名使用统计。
 
 **退出：** `export OPENSPEC_TELEMETRY=0` 或 `export DO_NOT_TRACK=1`
 
-</details>
-
-<details>
 <summary><strong>维护者与顾问</strong></summary>
-
 查看 [MAINTAINERS.md](MAINTAINERS.md) 了解核心维护者和顾问名单，他们帮助指导项目发展。
-
-</details>
-
-
 
 ## 许可证
 
 MIT
-<details>
 <summary><strong>最受喜爱的规范 (spec) 框架。</strong></summary>
 
 [![https://img.shields.io/github/stars/Fission-AI/OpenSpec?style=flat-square&label=Stars](/images/Stars)](https://github.com/Fission-AI/OpenSpec/stargazers)
 [![https://img.shields.io/npm/dm/@fission-ai/openspec?style=flat-square&label=Downloads/mo](/images/Downloads)](https://www.npmjs.com/package/@fission-ai/openspec)
 [![https://img.shields.io/github/contributors/Fission-AI/OpenSpec?style=flat-square&label=Contributors](/images/Contributors)](https://github.com/Fission-AI/OpenSpec/graphs/contributors)
 
-</details>
-<p></p>
 我们的理念：
 
 ```text
@@ -359,7 +332,6 @@ openspec update
 
 ## 其他
 
-<details>
 <summary><strong>遥测</strong></summary>
 
 OpenSpec 收集匿名使用统计。
@@ -368,16 +340,9 @@ OpenSpec 收集匿名使用统计。
 
 **退出：** `export OPENSPEC_TELEMETRY=0` 或 `export DO_NOT_TRACK=1`
 
-</details>
-
-<details>
 <summary><strong>维护者与顾问</strong></summary>
 
 查看 [MAINTAINERS.md](MAINTAINERS.md) 了解核心维护者和顾问名单，他们帮助指导项目发展。
-
-</details>
-
-
 
 ## 许可证
 
