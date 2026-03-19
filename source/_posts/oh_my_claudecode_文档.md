@@ -152,9 +152,7 @@ v4.1 为团队利用原生分阶段管道。转换被严格定义以确保质量
 
 ### 分阶段管道（Staged Pipeline）
 
-<div class="mermaid">
-graph LR A["1. team-plan"] --> B["2. team-prd"] B --> C["3. team-exec"] C --> D["4. team-verify"] D --> E["5. team-fix"] E --> C E --> D
-</div>
+<div class="mermaid">graph LR A["1. team-plan"] --> B["2. team-prd"] B --> C["3. team-exec"] C --> D["4. team-verify"] D --> E["5. team-fix"] E --> C E --> D</div>
 
 **阶段说明**：
 1. **team-plan** - 规划与任务分解
