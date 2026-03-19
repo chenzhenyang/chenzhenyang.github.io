@@ -99,3 +99,9 @@ abbrlink:
   alg: crc32  #support crc16(default) and crc32
   rep: dec    #support dec(default) and hex
 
+
+# Mermaid 配置
+mermaid:
+  enable: true
+  version: "10"  # Mermaid 版本
+  theme: "default"  # 主题：default, dark, forest, neutral
