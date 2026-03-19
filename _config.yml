@@ -105,3 +105,14 @@ mermaid:
   enable: false
   version: "10"  # Mermaid 版本
   theme: "default"  # 主题：default, dark, forest, neutral
+
+# Markdown-it 配置
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+  plugins:
+    - markdown-it-mermaid
