@@ -19,6 +19,8 @@ cache:
 # outside theme directory in root `source/_data`, set
 # `styles: source/_data/styles.styl`
 #custom_file_path:
+  footer: source/_data/mermaid.js
+  #
   # Default paths: layout/_custom/*
   #head: source/_data/head.swig
   #header: source/_data/header.swig
@@ -1080,3 +1082,14 @@ vendors:
 css: css
 js: js
 images: images
+
+# Mermaid 配置
+mermaid:
+  enable: true
+  cdn: https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
+
+# 自定义脚本
+custom_file_path:
+  footer: source/_data/mermaid.js
+  #
+  js: source/js/mermaid-init.js
