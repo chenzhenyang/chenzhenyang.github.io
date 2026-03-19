@@ -154,10 +154,10 @@ v4.1 为团队利用原生分阶段管道。转换被严格定义以确保质量
 
 <div class="mermaid">
 graph LR
-    A["1️⃣ team-plan"] --> B["2️⃣ team-prd"]
-    B --> C["3️⃣ team-exec"]
-    C --> D["4️⃣ team-verify"]
-    D --> E["5️⃣ team-fix"]
+    A["1. team-plan"] --> B["2. team-prd"]
+    B --> C["3. team-exec"]
+    C --> D["4. team-verify"]
+    D --> E["5. team-fix"]
     E --> C
     E --> D
 </div>
