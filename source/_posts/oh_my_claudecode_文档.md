@@ -1,7 +1,7 @@
 ---
 title: "文档 | Oh My Claudecode"
-date: 2026-03-19 11:10:28
-updated: 2026-03-19 11:10:28
+date: 2026-03-19 11:14:19
+updated: 2026-03-19 11:14:19
 tags:
   - AI
   - Technology
@@ -148,6 +148,27 @@ OMC 的核心原则是：**你是指挥家，而非演奏者。**
 ## 团队架构（Team Architecture）
 
 v4.1 为团队利用原生分阶段管道。转换被严格定义以确保质量门控。
+
+### 分阶段管道（Staged Pipeline）
+
+```mermaid
+graph LR
+    A["1️⃣ team-plan"] --> B["2️⃣ team-prd"]
+    B --> C["3️⃣ team-exec"]
+    C --> D["4️⃣ team-verify"]
+    D --> E["5️⃣ team-fix"]
+    E --> C
+    E --> D
+```
+
+**阶段说明**：
+1. **team-plan** - 规划与任务分解
+2. **team-prd** - 产品需求定义
+3. **team-exec** - 代码执行与实现
+4. **team-verify** - 验证与测试
+5. **team-fix** - 修复与改进
+
+### 状态转换表
 
 | 从          | 到                      | 触发条件                               |
 |-------------|-------------------------|----------------------------------------|
