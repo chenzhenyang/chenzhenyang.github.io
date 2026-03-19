@@ -39,7 +39,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace:
@@ -102,6 +102,6 @@ abbrlink:
 
 # Mermaid 配置
 mermaid:
-  enable: true
+  enable: false
   version: "10"  # Mermaid 版本
   theme: "default"  # 主题：default, dark, forest, neutral
