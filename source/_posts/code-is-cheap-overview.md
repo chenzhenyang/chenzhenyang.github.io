@@ -1,7 +1,5 @@
 ---
-title: "现在编写代码很便宜 - Agentic Engineering Patterns"
-date: 2026-03-07 22:45:00
-updated: 2026-03-07 22:45:00
+title: 现在编写代码很便宜 - Agentic Engineering Patterns
 tags:
   - AI
   - Agentic Engineering
@@ -9,6 +7,9 @@ tags:
   - Programming
 categories:
   - Technology
+abbrlink: 2614835866
+date: 2026-03-07 22:45:00
+updated: 2026-03-07 22:45:00
 ---
 
 # 现在编写代码很便宜

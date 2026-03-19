@@ -1,14 +1,15 @@
 ---
-title: "线性 walkthroughs"
-origin_title: "Linear walkthroughs - Agentic Engineering Patterns - Simon Willison's Weblog"
-author: "Simon Willison"
-date: 2026-03-10 21:42:31
-updated: 2026-03-10 21:42:31
+title: 线性 walkthroughs
+origin_title: Linear walkthroughs - Agentic Engineering Patterns - Simon Willison's Weblog
+author: Simon Willison
 tags:
   - AI
   - Technology
 categories:
   - Technology
+abbrlink: 1739414639
+date: 2026-03-10 21:42:31
+updated: 2026-03-10 21:42:31
 ---
 
 # 线性 walkthroughs - Agentic Engineering Patterns - Simon Willison 的 Weblog

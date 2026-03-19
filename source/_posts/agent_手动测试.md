@@ -1,12 +1,12 @@
 ---
-title: "Agent 手动测试"
+title: Agent 手动测试
+tags:
+  - AI - Technology
+categories:
+  - Technology
+abbrlink: 2462961482
 date: 2026-03-10 09:00:45
 updated: 2026-03-10 09:00:45
-tags:
-- AI
-  - Technology
-categories:
-- Technology
 ---
 
 # Agent 手动测试

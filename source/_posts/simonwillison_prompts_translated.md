@@ -1,12 +1,13 @@
 ---
-title: "我使用的提示词"
-date: 2026-03-11 13:18:27
-updated: 2026-03-11 13:18:27
+title: 我使用的提示词
 tags:
   - AI
   - Technology
 categories:
   - Technology
+abbrlink: 3117940562
+date: 2026-03-11 13:18:27
+updated: 2026-03-11 13:18:27
 ---
 
 

@@ -1,16 +1,18 @@
 ---
-title: "自主编码代理：Codex 示例"
-date: 2026-03-11 20:59:10
-updated: 2026-03-11 20:59:10
+title: 自主编码代理：Codex 示例
 tags:
   - AI
   - Technology
 categories:
   - Technology
-origin_title: "Autonomous coding agents: A Codex example"
-author: "Martin Fowler"
-skill_id: "f822e3ac265d"
-original_url: "https://martinfowler.com/articles/exploring-gen-ai/autonomous-agents-codex-example.html"
+origin_title: 'Autonomous coding agents: A Codex example'
+author: Martin Fowler
+skill_id: f822e3ac265d
+original_url: >-
+  https://martinfowler.com/articles/exploring-gen-ai/autonomous-agents-codex-example.html
+abbrlink: 1018842827
+date: 2026-03-11 20:59:10
+updated: 2026-03-11 20:59:10
 ---
 
 

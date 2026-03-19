@@ -1,7 +1,5 @@
 ---
-title: "Agentic Engineering Patterns 概述"
-date: 2026-03-07 00:15:00
-updated: 2026-03-07 00:15:00
+title: Agentic Engineering Patterns 概述
 tags:
   - AI
   - Agent
@@ -9,6 +7,9 @@ tags:
   - Patterns
 categories:
   - Technology
+abbrlink: 2014430881
+date: 2026-03-07 00:15:00
+updated: 2026-03-07 00:15:00
 ---
 
 # 关于 Agentic Engineering Patterns

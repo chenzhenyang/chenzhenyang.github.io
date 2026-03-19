@@ -1,16 +1,18 @@
 ---
-date: 2026-03-12 22:32:11
-title: "OpenSpec README"
+title: OpenSpec README
 skill_id: 803d09b6
-generated: 2026-03-12T22:28:55.353095
-original_url: https://raw.githubusercontent.com/Fission-AI/OpenSpec/refs/heads/main/README.md
-origin_title: "OpenSpec README"
-author: "Fission-AI"
+original_url: >-
+  https://raw.githubusercontent.com/Fission-AI/OpenSpec/refs/heads/main/README.md
+origin_title: OpenSpec README
+author: Fission-AI
 tags:
   - OpenSpec
   - 规范框架
   - AI 编程
   - 工作流
+abbrlink: 658987613
+date: 2026-03-12 22:32:11
+generated: 2026-03-12 22:28:55
 ---
 
 <summary><strong>最受喜爱的规范 (spec) 框架。</strong></summary>

@@ -1,14 +1,15 @@
 ---
-title: "使用 Agent 编码时评估内部质量"
-date: 2026-03-11 20:51:24
-updated: 2026-03-11 20:51:24
+title: 使用 Agent 编码时评估内部质量
 tags:
   - AI
   - Technology
 categories:
   - Technology
-origin_title: "Assessing internal quality while coding with an agent"
-author: "Martin Fowler"
+origin_title: Assessing internal quality while coding with an agent
+author: Martin Fowler
+abbrlink: 3160165449
+date: 2026-03-11 20:51:24
+updated: 2026-03-11 20:51:24
 ---
 
 

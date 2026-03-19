@@ -1,7 +1,5 @@
 ---
-title: "我如何使用 LLM 帮助我编写代码"
-date: 2026-03-07 22:10:00
-updated: 2026-03-07 22:10:00
+title: 我如何使用 LLM 帮助我编写代码
 tags:
   - AI
   - Programming
@@ -9,6 +7,9 @@ tags:
   - Coding
 categories:
   - Technology
+abbrlink: 3181136311
+date: 2026-03-07 22:10:00
+updated: 2026-03-07 22:10:00
 ---
 
 # 我如何使用 LLM 帮助我编写代码

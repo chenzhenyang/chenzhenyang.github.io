@@ -1,17 +1,18 @@
 ---
-title: "2026 年 Agent Harness 的重要性"
-date: 2026-03-12 22:08:48
-updated: 2026-03-12 22:08:48
+title: 2026 年 Agent Harness 的重要性
 tags:
   - AI
   - Technology
 categories:
   - Technology
-origin_title: "The importance of Agent Harness in 2026"
-author: "Phil Schmid"
-skill_id: "bd29e035"
-generated: "2026-03-12T22:06:22.979452"
-original_url: "https://www.philschmid.de/agent-harness-2026"
+origin_title: The importance of Agent Harness in 2026
+author: Phil Schmid
+skill_id: bd29e035
+generated: '2026-03-12T22:06:22.979452'
+original_url: 'https://www.philschmid.de/agent-harness-2026'
+abbrlink: 3114607926
+date: 2026-03-12 22:08:48
+updated: 2026-03-12 22:08:48
 ---
 
 我们正处于 AI 的转折点。多年来，我们只关注模型本身。我们询问模型有多智能/有多好。我们查看排行榜和基准测试，看模型 A 是否胜过模型 B。

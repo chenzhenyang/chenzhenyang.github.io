@@ -1,12 +1,10 @@
 ---
-title: "GIF 优化工具"
-origin_title: "GIF optimization - Agentic Engineering Patterns - Simon Willison's Weblog"
-author: "Simon Willison"
+title: GIF 优化工具
+origin_title: GIF optimization - Agentic Engineering Patterns - Simon Willison's Weblog
+author: Simon Willison
 skill_id: bcc4c571
-generated: 2026-03-11T12:07:54.105318
-original_url: https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/
-date: 2026-03-11 12:12:04
-updated: 2026-03-11 12:12:04
+original_url: >-
+  https://simonwillison.net/guides/agentic-engineering-patterns/gif-optimization/
 tags:
   - GIF
   - WebAssembly
@@ -14,6 +12,10 @@ tags:
   - Agentic Engineering
 categories:
   - Technology
+abbrlink: 2682272491
+generated: 2026-03-11 12:07:54
+date: 2026-03-11 12:12:04
+updated: 2026-03-11 12:12:04
 ---
 
 我喜欢在我的在线写作中包含动画 GIF 演示，通常使用 [LICEcap](https://www.cockos.com/licecap/) 录制。在 [交互式解释](https://simonwillison.net/guides/agentic-engineering-patterns/interactive-explanations/) 章节中就有一个例子。

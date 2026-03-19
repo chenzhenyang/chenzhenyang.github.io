@@ -1,16 +1,17 @@
 ---
-title: "Harness Engineering（约束工程）"
-date: 2026-03-11 21:05:16
-updated: 2026-03-11 21:05:16
+title: Harness Engineering（约束工程）
 tags:
   - AI
   - Technology
 categories:
   - Technology
-origin_title: "Harness Engineering"
-author: "Martin Fowler"
-skill_id: "7a5a2cf5ea81"
-original_url: "https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html"
+origin_title: Harness Engineering
+author: Martin Fowler
+skill_id: 7a5a2cf5ea81
+original_url: 'https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html'
+abbrlink: 3800462704
+date: 2026-03-11 21:05:16
+updated: 2026-03-11 21:05:16
 ---
 
 

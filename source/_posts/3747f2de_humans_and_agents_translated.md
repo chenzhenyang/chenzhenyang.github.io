@@ -1,15 +1,16 @@
 ---
-title: "Humans and Agents in Software Engineering Loops"
+title: Humans and Agents in Software Engineering Loops
 skill_id: 3747f2de
-generated: 2026-03-11T14:03:42.791207
-original_url: https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html
-date: 2026-03-11 14:06:43
-updated: 2026-03-11 14:06:43
+original_url: 'https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html'
 tags:
   - AI
   - Technology
 categories:
   - Technology
+abbrlink: 1409738761
+generated: 2026-03-11 14:03:42
+date: 2026-03-11 14:06:43
+updated: 2026-03-11 14:06:43
 ---
 
 人类应该远离软件开发过程让 AI 自由发挥（vibe code），还是需要开发者在循环中检查每一行代码？我相信答案应该聚焦于将想法转化为成果这一目标。我们人类的正确位置是构建和管理这个工作循环，而不是要么完全交给 Agent，要么微观管理它们的产出。让我们称这种方式为"在循环之上"（on the loop）。

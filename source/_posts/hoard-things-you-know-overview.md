@@ -1,7 +1,5 @@
 ---
-title: "囤积你知道如何做的事情 - Agentic Engineering Patterns"
-date: 2026-03-08 00:50:00
-updated: 2026-03-08 00:50:00
+title: 囤积你知道如何做的事情 - Agentic Engineering Patterns
 tags:
   - AI
   - Agentic Engineering
@@ -9,6 +7,9 @@ tags:
   - Programming
 categories:
   - Technology
+abbrlink: 2377411021
+date: 2026-03-08 00:50:00
+updated: 2026-03-08 00:50:00
 ---
 
 # 囤积你知道如何做的事情

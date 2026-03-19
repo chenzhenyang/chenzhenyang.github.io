@@ -1,7 +1,5 @@
 ---
-title: "Agent Harness：为什么 2026 年是基础设施之年，而非智能之年"
-date: 2026-03-12 21:41:48
-updated: 2026-03-12 21:41:48
+title: Agent Harness：为什么 2026 年是基础设施之年，而非智能之年
 tags:
   - AI
   - Technology
@@ -9,10 +7,13 @@ tags:
   - Infrastructure
 categories:
   - Technology
-origin_title: "The Agent Harness: Why 2026 is About Infrastructure, Not Intelligence"
-author: "Hugo Nogueira"
-skill_id: "e4af7b59"
-original_url: "https://www.hugo.im/posts/agent-harness-infrastructure"
+origin_title: 'The Agent Harness: Why 2026 is About Infrastructure, Not Intelligence'
+author: Hugo Nogueira
+skill_id: e4af7b59
+original_url: 'https://www.hugo.im/posts/agent-harness-infrastructure'
+abbrlink: 2676668753
+date: 2026-03-12 21:41:48
+updated: 2026-03-12 21:41:48
 ---
 
 两天前，Philipp Schmid 发表了一篇论文让我停止了滑动：[《如果 2025 年是 Agent 的开端，2026 年将是 Agent Harness 之年》](https://www.philschmid.de/agent-harness-2026)。

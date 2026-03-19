@@ -1,17 +1,18 @@
 ---
-title: "文档 | Oh My Claudecode"
-date: 2026-03-19 11:25:32
-updated: 2026-03-19 11:25:32
+title: 文档 | Oh My Claudecode
 tags:
   - AI
   - Technology
 categories:
   - Technology
-origin_title: "Documentation | Oh My Claudecode"
-author: "Yeachan Heo"
-skill_id: "475c9c9f"
-generated: "2026-03-19T09:51:31.753992"
-original_url: "https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#introduction"
+origin_title: Documentation | Oh My Claudecode
+author: Yeachan Heo
+skill_id: 475c9c9f
+generated: '2026-03-19T09:51:31.753992'
+original_url: 'https://yeachan-heo.github.io/oh-my-claudecode-website/docs.html#introduction'
+abbrlink: 1094057933
+date: 2026-03-19 11:25:32
+updated: 2026-03-19 11:25:32
 ---
 
 # Oh My Claudecode 文档

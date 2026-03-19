@@ -1,7 +1,5 @@
 ---
-title: "红/绿 TDD - Agentic Engineering Patterns"
-date: 2026-03-08 01:15:00
-updated: 2026-03-08 01:15:00
+title: 红/绿 TDD - Agentic Engineering Patterns
 tags:
   - AI
   - Agentic Engineering
@@ -9,6 +7,9 @@ tags:
   - Testing
 categories:
   - Technology
+abbrlink: 1706620865
+date: 2026-03-08 01:15:00
+updated: 2026-03-08 01:15:00
 ---
 
 # 红/绿 TDD
