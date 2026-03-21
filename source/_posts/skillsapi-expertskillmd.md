@@ -10,7 +10,12 @@ categories:
 skill_id: "169b4594"
 generated: "2026-03-21T01:10:18.516430"
 original_url: "https://x.com/GoogleCloudTech/status/2033953579824758855"
+photos:
+  - https://pbs.twimg.com/media/G3xKZJ5bIAAqR7l?format=jpg&name=large
 ---
+
+![5 Agent Skill Design Patterns](https://pbs.twimg.com/media/G3xKZJ5bIAAqR7l?format=jpg&name=large)
+
 
 说到 SKILL.md，开发者往往过于关注格式——确保 YAML 正确、构建目录结构、遵循规范。但随着超过 30 个 Agent 工具（如 Claude Code、Gemini CLI 和 Cursor）都标准化为相同的布局，格式问题实际上已经过时了。
 
