@@ -1,7 +1,7 @@
 ---
-title: "skills/api-expert/SKILL.md"
-date: 2026-03-21 08:59:12
-updated: 2026-03-21 08:59:12
+title: "5 Agent Skill Design Patterns Every ADK Developer Should Know"
+date: 2026-03-21 08:59:29
+updated: 2026-03-21 08:59:29
 tags:
   - AI
   - Technology
