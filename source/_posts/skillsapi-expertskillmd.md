@@ -73,6 +73,10 @@ Load 'references/conventions.md' for the complete list of FastAPI best practices
 4. Use Annotated style for dependency injection
 ```
 
+![## 1. Tool Wrapper](https://pbs.twimg.com/media/2033942042057834502?format=jpg&name=large)
+
+
+
 ---
 
 ## 2. Generator（生成器）
@@ -108,6 +112,10 @@ Step 4: Fill the template following the style guide rules. Every section in the 
 
 Step 5: Return the completed report as a single Markdown document.
 ```
+
+![## 2. Generator](https://pbs.twimg.com/media/2033942742267793409?format=jpg&name=large)
+
+
 
 ---
 
@@ -147,6 +155,10 @@ Step 4: Produce a structured review with these sections:
 - **Score**: Rate 1-10 with brief justification
 - **Top 3 Recommendations**: The most impactful improvements
 ```
+
+![## 3. Reviewer](https://pbs.twimg.com/media/2033943041958940674?format=jpg&name=large)
+
+
 
 ---
 
@@ -193,6 +205,10 @@ Ask these questions in order. Do not skip any.
 5. Iterate on feedback until the user confirms
 ```
 
+![## 4. Inversion](https://pbs.twimg.com/media/2033943282351542277?format=jpg&name=large)
+
+
+
 ---
 
 ## 5. Pipeline（流水线）
@@ -237,6 +253,10 @@ Review against 'references/quality-checklist.md':
 - At least one usage example per function
 Report results. Fix issues before presenting the final document.
 ```
+
+![## 5. Pipeline](https://pbs.twimg.com/media/2033943506906189824?format=jpg&name=large)
+
+
 
 ---
 
