@@ -33,7 +33,7 @@ generated: "2026-03-21T15:15:00+08:00"
 
 ### 5 个模式概览
 
-![5 Agent Skill design patterns](/images/HDoDJqGXAAg3-F-)
+![5 Agent Skill design patterns](/images/HDoDJqGXAAg3-F-.jpg)
 
 1. **Tool Wrapper（工具包装器）**: 让你的 agent 瞬间成为任何库的专家
 2. **Generator（生成器）**: 从可复用的模板生成结构化文档
@@ -45,7 +45,7 @@ generated: "2026-03-21T15:15:00+08:00"
 
 ## Pattern 1: The Tool Wrapper（工具包装器）
 
-![Pattern 1: Tool Wrapper](/images/HDoDgs6XAAYtw04)
+![Pattern 1: Tool Wrapper](/images/HDoDgs6XAAYtw04.jpg)
 
 Tool Wrapper 为你的 agent 提供针对特定库的按需上下文。与其将 API 约定硬编码到 system prompt 中，不如将它们打包到一个 skill 中。
 
@@ -82,7 +82,7 @@ Load 'references/conventions.md' for the complete list of FastAPI best practices
 
 ## Pattern 2: The Generator（生成器）
 
-![Pattern 2: Generator](/images/HDoDoIeXAAUmQoy)
+![Pattern 2: Generator](/images/HDoDoIeXAAUmQoy.jpg)
 
 如果说 Tool Wrapper 应用知识，那么 Generator 则强制执行一致的输出。
 
@@ -117,7 +117,7 @@ Step 5: Return the completed report as a single Markdown document.
 
 ## Pattern 3: The Reviewer（审查器）
 
-![Pattern 3: Reviewer](/images/HDoEa51XEAIKSnO)
+![Pattern 3: Reviewer](/images/HDoEa51XEAIKSnO.jpg)
 
 Reviewer 模式将"检查什么"与"如何检查"分离开来。
 
@@ -155,7 +155,7 @@ Step 4: Produce a structured review with these sections:
 
 ## Pattern 4: Inversion（反转）
 
-![Pattern 4: Inversion](/images/HDoEo5XbEAUaaFG)
+![Pattern 4: Inversion](/images/HDoEo5XbEAUaaFG.jpg)
 
 Agent 天生倾向于立即猜测和生成。Inversion 模式翻转了这种动态。
 
@@ -199,7 +199,7 @@ Ask these questions in order. Do not skip any.
 
 ## Pattern 5: The Pipeline（流水线）
 
-![Pattern 5: Pipeline](/images/HDoE195bEAABitY)
+![Pattern 5: Pipeline](/images/HDoE195bEAABitY.jpg)
 
 对于复杂任务，你不能承受跳过步骤或忽略指令的代价。
 
@@ -241,7 +241,7 @@ Report results. Fix issues before presenting the final document.
 
 ## 选择正确的模式
 
-![决策树：选择正确的 Agent Skill 模式](/images/HDoFWovXAAsbb8C)
+![决策树：选择正确的 Agent Skill 模式](/images/HDoFWovXAAsbb8C.jpg)
 
 ## 总结
 
