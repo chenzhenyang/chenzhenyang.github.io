@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222"/>
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"/>
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="m7PnUxOvbm"/>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css"/>
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false,"dimmer":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+  
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6918616608431911",
+    enable_page_level_ads: true
+  });
+</script>
+<script type="text/javascript">
+var infolinks_pid = 3172115;
+var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+
+
+  <meta name="description" content="Google Cloud Tech  @GoogleCloudTech    每个 ADK 开发者都应该知道的 5 个 Agent Skill 设计模式 92  1,080  4,186  169 万  说到 SKILL.md，开发者往往过于关注格式——确保 YAML 正确、目录结构规范、遵循规格说明。但随着超过 30 个 agent 工具（如 Claude Code、Gemini CLI 和 C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每个 ADK 开发者都应该知道的 5 个 Agent Skill 设计模式">
+<meta property="og:url" content="https://chenzhenyang.github.io/posts/3057648715.html">
+<meta property="og:site_name" content="架构新势力">
+<meta property="og:description" content="Google Cloud Tech  @GoogleCloudTech    每个 ADK 开发者都应该知道的 5 个 Agent Skill 设计模式 92  1,080  4,186  169 万  说到 SKILL.md，开发者往往过于关注格式——确保 YAML 正确、目录结构规范、遵循规格说明。但随着超过 30 个 agent 工具（如 Claude Code、Gemini CLI 和 C">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pbs.twimg.com/profile_images/1219725421962571779/_qstUQx__normal.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoDJqGXAAg3-F-">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoDgs6XAAYtw04">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoDoIeXAAUmQoy">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoEJdZbEAEdYMo">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoEa51XEAIKSnO">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoEo5XbEAUaaFG">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoE195bEAABitY">
+<meta property="og:image" content="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoFWovXAAsbb8C">
+<meta property="article:published_time" content="2026-03-22T10:44:24.000Z">
+<meta property="article:modified_time" content="2026-03-22T10:44:24.000Z">
+<meta property="article:author" content="陈振阳">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="Technology">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1219725421962571779/_qstUQx__normal.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://chenzhenyang.github.io/posts/3057648715.html"/>
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>每个 ADK 开发者都应该知道的 5 个 Agent Skill 设计模式 | 架构新势力</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9b7427cca3869988f791f21c9bb898e3";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">架构新势力</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br/>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>标签<span class="badge">41</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>分类<span class="badge">9</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>归档<span class="badge">39</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br/>站点地图</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://chenzhenyang.github.io/posts/3057648715.html"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈振阳"/>
+      <meta itemprop="description" content=""/>
+      <meta itemprop="image" content="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1552832480&di=1063ad4edffadcf07bf2d37cd2ed1ce1&src=http://img3.duitang.com/uploads/item/201502/08/20150208151906_sWaPQ.jpeg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="架构新势力"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">每个 ADK 开发者都应该知道的 5 个 Agent Skill 设计模式
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2026-03-22 10:44:24" itemprop="dateCreated datePublished" datetime="2026-03-22T10:44:24+00:00">2026-03-22</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+              
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/posts/3057648715.html#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="posts/3057648715.html" itemprop="commentCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+            <span id="/posts/3057648715.html" class="leancloud_visitors" data-flag-title="每个 ADK 开发者都应该知道的 5 个 Agent Skill 设计模式">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">8 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="/GoogleCloudTech"><img src="https://pbs.twimg.com/profile_images/1219725421962571779/_qstUQx__normal.jpg" alt="方形资料图片"></a></p>
+<p><a href="/GoogleCloudTech">Google Cloud Tech</a></p>
+<p><a href="/GoogleCloudTech">@GoogleCloudTech</a></p>
+<p><a href="/GoogleCloudTech/article/2033953579824758855/media/2033941646165868552"><img src="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoDJqGXAAg3-F-" alt="图像"></a></p>
+<h1><span id="每个-adk-开发者都应该知道的-5-个-agent-skill-设计模式">每个 ADK 开发者都应该知道的 5 个 Agent Skill 设计模式</span></h1><p>92</p>
+<p>1,080</p>
+<p>4,186</p>
+<p><a href="/GoogleCloudTech/status/2033953579824758855/analytics">169 万</a></p>
+<p>说到 SKILL.md，开发者往往过于关注格式——确保 YAML 正确、目录结构规范、遵循规格说明。但随着超过 30 个 agent 工具（如 Claude Code、Gemini CLI 和 Cursor）都标准化为相同的布局，格式问题实际上已经过时了。</p>
+<p>现在的挑战是内容设计。规格说明解释了如何打包一个 skill，但对于如何在其中组织逻辑却没有提供任何指导。例如，一个封装 FastAPI 约定的 skill 与一个四步文档 pipeline 的运作方式完全不同，尽管它们的 SKILL.md 文件从外部看起来完全一样。</p>
+<p>通过研究整个生态系统中 skill 的构建方式——从 Anthropic 的仓库到 Vercel 和 Google 的内部指南——我们发现了五种反复出现的设计模式，可以帮助开发者构建 agent。</p>
+<p>作者：</p>
+<p><a href="https://x.com/@Saboo_Shubham_">@Saboo_Shubham_</a></p>
+<p>和</p>
+<p><a href="https://x.com/@lavinigam">@lavinigam</a></p>
+<p>本文将通过可运行的 ADK 代码介绍每一种模式：</p>
+<ul>
+<li><strong>Tool Wrapper（工具包装器）</strong>：让你的 agent 瞬间成为任何库的专家</li>
+<li><strong>Generator（生成器）</strong>：从可复用的模板生成结构化文档</li>
+<li><strong>Reviewer（审查器）</strong>：根据严重程度对照清单对代码进行评分</li>
+<li><strong>Inversion（反转）</strong>：agent 在行动前先采访你</li>
+<li><strong>Pipeline（流水线）</strong>：通过检查点执行严格的多步骤工作流</li>
+</ul>
+<p><a href="/GoogleCloudTech/article/2033953579824758855/media/2033942042057834502"><img src="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoDgs6XAAYtw04" alt="图像"></a></p>
+<h2><span id="模式-1tool-wrapper工具包装器">模式 1：Tool Wrapper（工具包装器）</span></h2><p>Tool Wrapper 为你的 agent 提供针对特定库的按需上下文。与其将 API 约定硬编码到系统提示中，不如将它们打包到一个 skill 中。你的 agent 只会在实际使用该技术时才加载这个上下文。</p>
+<p><a href="/GoogleCloudTech/article/2033953579824758855/media/2033942169715671045"><img src="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoDoIeXAAUmQoy" alt="图像"></a></p>
+<p>这是最简单的实现模式。SKILL.md 文件监听用户提示中的特定库关键词，从 <code>references/</code> 目录动态加载你的内部文档，并将这些规则作为绝对真理应用。这正是你将团队的内部编码指南或特定框架最佳实践直接分发到开发者工作流中的机制。</p>
+<p>下面是一个教授 agent 如何编写 FastAPI 代码的 Tool Wrapper 示例。注意指令如何明确告诉 agent 只在开始审查或编写代码时才加载 <code>conventions.md</code> 文件：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># skills/api-expert/SKILL.md</span></span><br><span class="line">---</span><br><span class="line">name: api-expert</span><br><span class="line">description: FastAPI development best practices and conventions. Use when building, reviewing, or debugging FastAPI applications, REST APIs, or Pydantic models.</span><br><span class="line">metadata:</span><br><span class="line">  pattern: tool-wrapper</span><br><span class="line"><span class="section">  domain: fastapi</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">You are an expert in FastAPI development. Apply these conventions to the user&#x27;s code or question.</span><br><span class="line"></span><br><span class="line"><span class="section">## Core Conventions</span></span><br><span class="line"></span><br><span class="line">Load &#x27;references/conventions.md&#x27; for the complete list of FastAPI best practices.</span><br><span class="line"></span><br><span class="line"><span class="section">## When Reviewing Code</span></span><br><span class="line"><span class="bullet">1.</span> Load the conventions reference</span><br><span class="line"><span class="bullet">2.</span> Check the user&#x27;s code against each convention</span><br><span class="line"><span class="bullet">3.</span> For each violation, cite the specific rule and suggest the fix</span><br><span class="line"></span><br><span class="line"><span class="section">## When Writing Code</span></span><br><span class="line"><span class="bullet">1.</span> Load the conventions reference</span><br><span class="line"><span class="bullet">2.</span> Follow every convention exactly</span><br><span class="line"><span class="bullet">3.</span> Add type annotations to all function signatures</span><br><span class="line"><span class="bullet">4.</span> Use Annotated style for dependency injection</span><br></pre></td></tr></table></figure>
+
+<h2><span id="模式-2generator生成器">模式 2：Generator（生成器）</span></h2><p>如果说 Tool Wrapper 是应用知识，那么 Generator 则是强制执行一致输出。如果你苦于 agent 每次运行都生成不同的文档结构，Generator 通过编排填空过程来解决这个问题。</p>
+<p><a href="/GoogleCloudTech/article/2033953579824758855/media/2033942742267793409"><img src="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoEJdZbEAEdYMo" alt="图像"></a></p>
+<p>它利用两个可选目录：<code>assets/</code> 存放输出模板，<code>references/</code> 存放风格指南。指令充当项目经理，告诉 agent 加载模板、阅读风格指南、向用户询问缺失的变量，并填充文档。这对于生成可预测的 API 文档、标准化提交消息或搭建项目架构非常实用。</p>
+<p>在这个技术报告生成器示例中，skill 文件不包含实际的布局或语法规则。它只是协调这些资源的检索，并强制 agent 逐步执行：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># skills/report-generator/SKILL.md</span></span><br><span class="line">---</span><br><span class="line">name: report-generator</span><br><span class="line">description: Generates structured technical reports in Markdown. Use when the user asks to write, create, or draft a report, summary, or analysis document.</span><br><span class="line">metadata:</span><br><span class="line">  pattern: generator</span><br><span class="line"><span class="section">  output-format: markdown</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">You are a technical report generator. Follow these steps exactly:</span><br><span class="line"></span><br><span class="line">Step 1: Load &#x27;references/style-guide.md&#x27; for tone and formatting rules.</span><br><span class="line"></span><br><span class="line">Step 2: Load &#x27;assets/report-template.md&#x27; for the required output structure.</span><br><span class="line"></span><br><span class="line">Step 3: Ask the user for any missing information needed to fill the template:</span><br><span class="line"><span class="bullet">-</span> Topic or subject</span><br><span class="line"><span class="bullet">-</span> Key findings or data points</span><br><span class="line"><span class="bullet">-</span> Target audience (technical, executive, general)</span><br><span class="line"></span><br><span class="line">Step 4: Fill the template following the style guide rules. Every section in the template must be present in the output.</span><br><span class="line"></span><br><span class="line">Step 5: Return the completed report as a single Markdown document.</span><br></pre></td></tr></table></figure>
+
+<h2><span id="模式-3reviewer审查器">模式 3：Reviewer（审查器）</span></h2><p>Reviewer 模式将”检查什么”与”如何检查”分离开来。与其编写冗长的系统提示详细说明每个代码异味，不如将一个模块化的评分标准存储在 <code>references/review-checklist.md</code> 文件中。</p>
+<p><a href="/GoogleCloudTech/article/2033953579824758855/media/2033943041958940674"><img src="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoEa51XEAIKSnO" alt="图像"></a></p>
+<p>当用户提交代码时，agent 加载这个清单并系统地评分，将其发现按严重程度分组。如果你将 Python 风格清单替换为 OWASP 安全清单，使用完全相同的 skill 基础设施就能得到完全不同的专业审计。这是一种自动化 PR 审查或在人工查看代码之前捕捉漏洞的高效方法。</p>
+<p>下面的代码审查 skill 展示了这种分离。指令保持静态，但 agent 动态地从外部清单加载具体的审查标准，并强制输出结构化的、基于严重程度的结果：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># skills/code-reviewer/SKILL.md</span></span><br><span class="line">---</span><br><span class="line">name: code-reviewer</span><br><span class="line">description: Reviews Python code for quality, style, and common bugs. Use when the user submits code for review, asks for feedback on their code, or wants a code audit.</span><br><span class="line">metadata:</span><br><span class="line">  pattern: reviewer</span><br><span class="line"><span class="section">  severity-levels: error,warning,info</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">You are a Python code reviewer. Follow this review protocol exactly:</span><br><span class="line"></span><br><span class="line">Step 1: Load &#x27;references/review-checklist.md&#x27; for the complete review criteria.</span><br><span class="line"></span><br><span class="line">Step 2: Read the user&#x27;s code carefully. Understand its purpose before critiquing.</span><br><span class="line"></span><br><span class="line">Step 3: Apply each rule from the checklist to the code. For every violation found:</span><br><span class="line"><span class="bullet">-</span> Note the line number (or approximate location)</span><br><span class="line"><span class="bullet">-</span> Classify severity: error (must fix), warning (should fix), info (consider)</span><br><span class="line"><span class="bullet">-</span> Explain WHY it&#x27;s a problem, not just WHAT is wrong</span><br><span class="line"><span class="bullet">-</span> Suggest a specific fix with corrected code</span><br><span class="line"></span><br><span class="line">Step 4: Produce a structured review with these sections:</span><br><span class="line"><span class="bullet">-</span> <span class="strong">**Summary**</span>: What the code does, overall quality assessment</span><br><span class="line"><span class="bullet">-</span> <span class="strong">**Findings**</span>: Grouped by severity (errors first, then warnings, then info)</span><br><span class="line"><span class="bullet">-</span> <span class="strong">**Score**</span>: Rate 1-10 with brief justification</span><br><span class="line"><span class="bullet">-</span> <span class="strong">**Top 3 Recommendations**</span>: The most impactful improvements</span><br></pre></td></tr></table></figure>
+
+<h2><span id="模式-4inversion反转">模式 4：Inversion（反转）</span></h2><p>agent 天生倾向于立即猜测和生成。Inversion 模式翻转了这种动态。不是由用户驱动提示、agent 执行，而是 agent 充当采访者。</p>
+<p><a href="/GoogleCloudTech/article/2033953579824758855/media/2033943282351542277"><img src="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoEo5XbEAUaaFG" alt="图像"></a></p>
+<p>Inversion 依赖明确的、不可协商的门控指令（如”在所有阶段完成之前不要开始构建”）来强制 agent 先收集上下文。它按顺序提出结构化问题，并在进入下一阶段之前等待你的回答。在完整了解你的需求和部署约束之前，agent 拒绝合成最终输出。</p>
+<p>看看这个 project planner skill 的实际应用。这里的关键元素是严格的阶段划分和明确的门控提示，在收集完所有用户回答之前阻止 agent 合成最终计划：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># skills/project-planner/SKILL.md</span></span><br><span class="line">---</span><br><span class="line">name: project-planner</span><br><span class="line">description: Plans a new software project by gathering requirements through structured questions before producing a plan. Use when the user says &quot;I want to build&quot;, &quot;help me plan&quot;, &quot;design a system&quot;, or &quot;start a new project&quot;.</span><br><span class="line">metadata:</span><br><span class="line">  pattern: inversion</span><br><span class="line"><span class="section">  interaction: multi-turn</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">You are conducting a structured requirements interview. DO NOT start building or designing until all phases are complete.</span><br><span class="line"></span><br><span class="line"><span class="section">## Phase 1 — Problem Discovery (ask one question at a time, wait for each answer)</span></span><br><span class="line"></span><br><span class="line">Ask these questions in order. Do not skip any.</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> Q1: &quot;What problem does this project solve for its users?&quot;</span><br><span class="line"><span class="bullet">-</span> Q2: &quot;Who are the primary users? What is their technical level?&quot;</span><br><span class="line"><span class="bullet">-</span> Q3: &quot;What is the expected scale? (users per day, data volume, request rate)&quot;</span><br><span class="line"></span><br><span class="line"><span class="section">## Phase 2 — Technical Constraints (only after Phase 1 is fully answered)</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> Q4: &quot;What deployment environment will you use?&quot;</span><br><span class="line"><span class="bullet">-</span> Q5: &quot;Do you have any technology stack requirements or preferences?&quot;</span><br><span class="line"><span class="bullet">-</span> Q6: &quot;What are the non-negotiable requirements? (latency, uptime, compliance, budget)&quot;</span><br><span class="line"></span><br><span class="line"><span class="section">## Phase 3 — Synthesis (only after all questions are answered)</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">1.</span> Load &#x27;assets/plan-template.md&#x27; for the output format</span><br><span class="line"><span class="bullet">2.</span> Fill in every section of the template using the gathered requirements</span><br><span class="line"><span class="bullet">3.</span> Present the completed plan to the user</span><br><span class="line"><span class="bullet">4.</span> Ask: &quot;Does this plan accurately capture your requirements? What would you change?&quot;</span><br><span class="line"><span class="bullet">5.</span> Iterate on feedback until the user confirms</span><br></pre></td></tr></table></figure>
+
+<h2><span id="模式-5pipeline流水线">模式 5：Pipeline（流水线）</span></h2><p>对于复杂任务，你不能容忍跳过步骤或忽略指令。Pipeline 模式通过硬性检查点执行严格的顺序工作流。</p>
+<p>指令本身充当工作流定义。通过实现明确的菱形门控条件（例如在从 docstring 生成移动到最终组装之前要求用户批准），Pipeline 确保 agent 无法绕过复杂任务并呈现未验证的最终结果。</p>
+<p><a href="/GoogleCloudTech/article/2033953579824758855/media/2033943506906189824"><img src="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoE195bEAABitY" alt="图像"></a></p>
+<p>这个模式利用所有可选目录，只在特定步骤需要时拉入不同的参考文件和模板，保持上下文窗口干净。</p>
+<p>在这个文档 pipeline 示例中，注意明确的门控条件。agent 被明确禁止在用户确认上一步生成的 docstring 之前进入组装阶段：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># skills/doc-pipeline/SKILL.md</span></span><br><span class="line">---</span><br><span class="line">name: doc-pipeline</span><br><span class="line">description: Generates API documentation from Python source code through a multi-step pipeline. Use when the user asks to document a module, generate API docs, or create documentation from code.</span><br><span class="line">metadata:</span><br><span class="line">  pattern: pipeline</span><br><span class="line"><span class="section">  steps: &quot;4&quot;</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">You are running a documentation generation pipeline. Execute each step in order. Do NOT skip steps or proceed if a step fails.</span><br><span class="line"></span><br><span class="line"><span class="section">## Step 1 — Parse &amp; Inventory</span></span><br><span class="line">Analyze the user&#x27;s Python code to extract all public classes, functions, and constants. Present the inventory as a checklist. Ask: &quot;Is this the complete public API you want documented?&quot;</span><br><span class="line"></span><br><span class="line"><span class="section">## Step 2 — Generate Docstrings</span></span><br><span class="line">For each function lacking a docstring:</span><br><span class="line"><span class="bullet">-</span> Load &#x27;references/docstring-style.md&#x27; for the required format</span><br><span class="line"><span class="bullet">-</span> Generate a docstring following the style guide exactly</span><br><span class="line"><span class="bullet">-</span> Present each generated docstring for user approval</span><br><span class="line">Do NOT proceed to Step 3 until the user confirms.</span><br><span class="line"></span><br><span class="line"><span class="section">## Step 3 — Assemble Documentation</span></span><br><span class="line">Load &#x27;assets/api-doc-template.md&#x27; for the output structure. Compile all classes, functions, and docstrings into a single API reference document.</span><br><span class="line"></span><br><span class="line"><span class="section">## Step 4 — Quality Check</span></span><br><span class="line">Review against &#x27;references/quality-checklist.md&#x27;:</span><br><span class="line"><span class="bullet">-</span> Every public symbol documented</span><br><span class="line"><span class="bullet">-</span> Every parameter has a type and description</span><br><span class="line"><span class="bullet">-</span> At least one usage example per function</span><br><span class="line">Report results. Fix issues before presenting the final document.</span><br></pre></td></tr></table></figure>
+
+<h2><span id="选择合适的-agent-skill-模式">选择合适的 agent skill 模式</span></h2><p>每种模式回答不同的问题。使用这个决策树为你的用例找到合适的模式：</p>
+<p><a href="/GoogleCloudTech/article/2033953579824758855/media/2033944068162519051"><img src="https://raw.githubusercontent.com/chenzhenyang/chenzhenyang.github.io/master/images/b4fcb5d1/HDoFWovXAAsbb8C" alt="图像"></a></p>
+<h2><span id="最后模式可以组合">最后，模式可以组合</span></h2><p>这些模式不是互斥的。它们可以组合使用。</p>
+<p>一个 Pipeline skill 可以在最后包含一个 Reviewer 步骤来复查自己的工作。一个 Generator 可以在最开始依赖 Inversion 来收集必要的变量，然后再填充模板。得益于 ADK 的 SkillToolset 和渐进式披露，你的 agent 只在运行时将上下文 token 花费在确切需要的模式上。</p>
+<p>不要再试图将复杂而脆弱的指令塞进单个系统提示中。分解你的工作流，应用正确的结构模式，构建可靠的 agent。</p>
+<h2><span id="今天就开始">今天就开始</span></h2><p>Agent Skills 规范是开源的，并在 ADK 中原生支持。你已经知道如何打包格式。现在你知道如何设计内容。去构建更智能的 agent 吧：</p>
+<p><a href="https://google.github.io/adk-docs/">Google Agent Development Kit</a></p>
+<p>想发布自己的文章？</p>
+<p><a href="/i/premium_sign_up">升级为 Premium</a></p>
+<p><a href="/GoogleCloudTech/status/2033953579824758855">上午 1:08 · 2026 年 3 月 18 日</a></p>
+<p>·</p>
+<p><a href="/GoogleCloudTech/status/2033953579824758855/analytics">169.3 万 查看</a></p>
+<p>92</p>
+<p>1,080</p>
+<p>4,186</p>
+<p>8,968</p>
+<p>相关</p>
+<p><a href="/GoogleCloudTech/status/2033953579824758855/quotes">查看引用</a></p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+  <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="陈振阳 wechat" style="width: 200px; max-width: 100%;"/>
+  <div>关注公众号</div>
+</div>
+
+      </div>
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Google Cloud Tech</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://chenzhenyang.github.io/posts/3057648715.html" title="每个 ADK 开发者都应该知道的 5 个 Agent Skill 设计模式">https://chenzhenyang.github.io/posts/3057648715.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AI/" rel="tag"># AI</a>
+          
+            <a href="/tags/Technology/" rel="tag"># Technology</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+          
+            <span class="post-meta-divider">|</span>
+          
+          <div class="social_share">
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/1094057933.html" rel="next" title="文档 | Oh My Claudecode">
+                <i class="fa fa-chevron-left"></i> 文档 | Oh My Claudecode
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6918616608431911",
+    enable_page_level_ads: true
+  });
+</script>
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1552832480&di=1063ad4edffadcf07bf2d37cd2ed1ce1&src=http://img3.duitang.com/uploads/item/201502/08/20150208151906_sWaPQ.jpeg"
+                alt="陈振阳"/>
+            
+              <p class="site-author-name" itemprop="name">陈振阳</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/%20%7C%7C%20archive">
+                
+                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/chenzhenyang" title="GitHub &rarr; https://github.com/chenzhenyang" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"/></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/xichenguan" title="https://blog.csdn.net/xichenguan" rel="noopener" target="_blank">CSDN</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          <a href="https://s.click.taobao.com/t?e=m%3D2%26s%3D2R9OOQc2A9McQipKwQzePCperVdZeJviEViQ0P1Vf2kguMN8XjClApVlwJggwxbAL8PtxxJsl4n%2FQI53oWrxtY7x7PaKnEZlW%2BCCx7%2F2tcZBWzNPD7%2BwVn0DGfdJ6SaUYMsSHLWchUVtQl8vLdysepHjKlMEkHC06du04PdR3Oc9XUfbPSJC%2FzEPa2dO8IvxFuRABmsVWWJ7aX0WuEyt01bwjpDl6wi5xfbi2zWeKf1HudoeDPMGTcYl7w3%2FA2kb"><img src="https://img.alicdn.com/tfs/TB1TDIoCxGYBuNjy0FnXXX5lpXa-300-100.png"/></a>
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">每个 ADK 开发者都应该知道的 5 个 Agent Skill 设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">模式 1：Tool Wrapper（工具包装器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text">模式 2：Generator（生成器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.3.</span> <span class="nav-text">模式 3：Reviewer（审查器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.4.</span> <span class="nav-text">模式 4：Inversion（反转）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.5.</span> <span class="nav-text">模式 5：Pipeline（流水线）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.6.</span> <span class="nav-text">选择合适的 agent skill 模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.7.</span> <span class="nav-text">最后，模式可以组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.8.</span> <span class="nav-text">今天就开始</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+    <div id="sidebar-dimmer"></div>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">  <a href="http://www.miitbeian.gov.cn" rel="noopener" target="_blank">鲁ICP备19008601号-2 </a>&copy; 2019 – <span itemprop="copyrightYear">2026</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">架构新势力</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">149k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">2:16</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <script id="ribbon" size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+
+
+
+  
+
+
+
+  
+  <script src="//cdn.jsdelivr.net/npm/jquery@2/dist/jquery.min.js"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+<!-- Mermaid 支持 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      mermaid.initialize({ 
+        startOnLoad: true,
+        theme: 'default',
+        securityLevel: 'loose',
+      });
+    });
+  </script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1.0.0/dist/quicklink.umd.js"></script>
+  <script>
+		window.addEventListener('load', () => {
+      quicklink({
+        timeout: 3000,
+        priority: true,
+        ignores: [uri => uri.includes('#'), ]
+      });
+    });
+  </script>
+
+  
+  
+  <script>
+  (function() {
+    var appid = 'cyu8If4Hr';
+    var conf = '4258f23dfe04bf63e46bb90f55e9c9a0';
+    var width = window.innerWidth || document.documentElement.clientWidth;
+    if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
+    }
+    else {
+      var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})});
+    }
+  })();
+  </script>
+  <script src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $('.leancloud_visitors');
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', '/classes/Counter/' + counter.objectId, JSON.stringify({ time: { '__op': 'Increment', 'amount': 1 } }))
+            
+              .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+              })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1 }))
+                .done(function() {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function() {
+                  console.log('Failed to create');
+                });
+            
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'vDI5ABlKiVm9M9QcDlgKTPkL-gzGzoHsz')
+        .done(function({ api_server }) {
+          var Counter = function(method, url, data) {
+            return $.ajax({
+              method: method,
+              url: 'https://' + api_server + '/1.1' + url,
+              headers: {
+                'X-LC-Id': 'vDI5ABlKiVm9M9QcDlgKTPkL-gzGzoHsz',
+                'X-LC-Key': 'A7leI3UHnC0UUQYCR2HypEHo',
+                'Content-Type': 'application/json',
+              },
+              data: data
+            });
+          };
+          
+            addCount(Counter);
+          
+        });
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+    
+      pbOptions = {};
+      
+        pbOptions.iconStyle = "box";
+      
+        pbOptions.boxForm = "horizontal";
+      
+        pbOptions.position = "bottomCenter";
+      
+        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+
+  
+  <script>
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 17393,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  </script>
+
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/npm/pangu@3/dist/browser/pangu.min.js"></script>
+  <script>pangu.spacingPage();</script>
+
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>
