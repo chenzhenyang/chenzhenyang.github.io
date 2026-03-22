@@ -30,11 +30,17 @@ Google Cloud Tech@GoogleCloudTech5 每个 ADK 开发者都应该知道的 5 个 
 - **Inversion（逆向）**：agent 在行动前先采访你
 - **Pipeline（流水线）**：通过检查点强制执行严格的多步骤工作流
 
+![5 个模式概览图](/images/HDoDJqGXAAg3-F-.jpg)
+
+![Pattern 1 概览](/images/HDoDgs6XAAYtw04.jpg)
+
 ## Pattern 1: The Tool Wrapper（工具包装器）
 
 Tool Wrapper 为你的 agent 提供针对特定库的按需上下文。与其将 API 约定硬编码到系统提示中，不如将它们打包成一个 skill。你的 agent 只有在实际使用该技术时才会加载这个上下文。
 
 这是最简单的实现模式。SKILL.md 文件监听用户提示中的特定库关键词，从 `references/` 目录动态加载你的内部文档，并将这些规则作为绝对真理应用。这正是你将团队的内部编码指南或特定框架最佳实践直接分发到开发者工作流中的机制。
+
+![Pattern 1 代码示例](/images/HDoDoIeXAAUmQoy.jpg)
 
 下面是一个 Tool Wrapper 示例，教 agent 如何编写 FastAPI 代码。注意指令如何明确告诉 agent 只在开始审查或编写代码时加载 `conventions.md` 文件：
 
@@ -70,6 +76,8 @@ Load 'references/conventions.md' for the complete list of FastAPI best practices
 
 Tool Wrapper 应用知识，而 Generator 强制执行一致的输出。如果你苦恼于 agent 每次运行都生成不同的文档结构，Generator 通过编排填空流程来解决这个问题。
 
+![Pattern 2 流程图](/images/HDoEJdZbEAEdYMo.jpg)
+
 它利用两个可选目录：`assets/` 存放输出模板，`references/` 存放风格指南。指令充当项目经理，告诉 agent 加载模板、阅读风格指南、询问用户缺失的变量，然后填充文档。这对于生成可预测的 API 文档、标准化提交消息或搭建项目架构非常实用。
 
 在这个技术报告生成器示例中，skill 文件不包含实际的布局或语法规则。它只是协调这些资源的检索，并强制 agent 一步步执行：
@@ -103,6 +111,8 @@ Step 5: Return the completed report as a single Markdown document.
 ## Pattern 3: The Reviewer（审查器）
 
 Reviewer 模式将"检查什么"与"如何检查"分开。与其编写冗长的系统提示详细说明每个代码异味，不如将模块化的评分标准存储在 `references/review-checklist.md` 文件中。
+
+![Pattern 3 审查流程](/images/HDoEa51XEAIKSnO.jpg)
 
 当用户提交代码时，agent 加载这个清单并系统地评分，按严重程度分组发现。如果你将 Python 风格清单替换为 OWASP 安全清单，使用完全相同的 skill 基础设施就能获得完全不同的专业审计。这是自动化 PR 审查或在人工审查前捕获漏洞的高效方法。
 
@@ -140,6 +150,8 @@ Step 4: Produce a structured review with these sections:
 ## Pattern 4: Inversion（逆向）
 
 Agent 天生倾向于立即猜测和生成。Inversion 模式颠倒了这种动态。不是用户驱动提示、agent 执行，而是 agent 充当采访者。
+
+![Pattern 4 采访流程](/images/HDoEo5XbEAUaaFG.jpg)
 
 Inversion 依赖明确的、不可协商的门控指令（如"在所有阶段完成之前不要开始构建"）来强制 agent 先收集上下文。它按顺序提出结构化问题，等待回答后再进入下一阶段。在完整了解你的需求和部署约束之前，agent 拒绝合成最终输出。
 
@@ -184,6 +196,8 @@ Ask these questions in order. Do not skip any.
 
 对于复杂任务，你不能承受跳过步骤或忽略指令。Pipeline 模式强制执行严格的顺序工作流，带有硬性检查点。
 
+![Pattern 5 流水线](/images/HDoE195bEAABitY.jpg)
+
 指令本身作为工作流定义。通过实现明确的钻石门控条件（如要求用户在进入最终组装之前确认 docstring 生成），Pipeline 确保 agent 不能绕过复杂任务并呈现未经验证的最终结果。
 
 此模式利用所有可选目录，仅在需要的特定步骤拉入不同的参考文件和模板，保持上下文窗口干净。
@@ -225,30 +239,6 @@ Report results. Fix issues before presenting the final document.
 
 ## Choosing the right agent skill pattern（选择合适的 agent skill 模式）
 
+![决策树](/images/HDoFWovXAAsbb8C.jpg)
+
 每个模式回答不同的问题。使用这个决策树找到适合你用例的模式：
-
-![Image](/images/HDoDJqGXAAg3-F-.jpg)
-
-## And finally, patterns compose（最后，模式可以组合）
-
-这些模式不是互斥的。它们可以组合。
-
-Pipeline skill 可以在最后包含一个 Reviewer 步骤来复查自己的工作。Generator 可以在最开始依赖 Inversion 来收集必要的变量，然后再填充模板。得益于 ADK 的 SkillToolset 和渐进式披露，你的 agent 只在运行时将上下文 token 花费在所需的精确模式上。
-
-停止试图将复杂而脆弱的指令塞进单个系统提示中。分解你的工作流，应用正确的结构模式，构建可靠的 agent。
-
-![Image](/images/HDoDgs6XAAYtw04.jpg)
-![Image](/images/HDoDoIeXAAUmQoy.jpg)
-![Image](/images/HDoEJdZbEAEdYMo.jpg)
-![Image](/images/HDoEa51XEAIKSnO.jpg)
-![Image](/images/HDoEo5XbEAUaaFG.jpg)
-![Image](/images/HDoE195bEAABitY.jpg)
-![Image](/images/HDoFWovXAAsbb8C.jpg)
-
-## Get started today（今天就开始）
-
-Agent Skills 规范是开源的，并在 ADK 中原生支持。你已经知道如何打包格式。现在你知道如何设计内容。使用 Google Agent Development Kit 构建更智能的 agent。
-
-想发布自己的文章？升级为 Premium
-
-上午 1:08 · 2026 年 3 月 18 日·168.6 万 查看 查看引用
